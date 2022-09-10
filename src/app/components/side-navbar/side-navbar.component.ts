@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { APP_CONFIG, SideNavLinks } from '../../models';
 
 @Component({
@@ -7,6 +7,7 @@ import { APP_CONFIG, SideNavLinks } from '../../models';
   styleUrls: ['./side-navbar.component.scss'],
 })
 export class SideNavbarComponent implements OnInit {
+  @Output() public selectedLink = new EventEmitter<string>();
   public navLinks: SideNavLinks[] = APP_CONFIG.SIDE_NAV_LINKS;
   public activeLinkId: number = 1;
 
@@ -14,7 +15,8 @@ export class SideNavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public onClick(id: number): void {
+  public onClick({ id, link }: { id: number; link: string }): void {
     this.activeLinkId = id;
+    this.selectedLink.emit(link);
   }
 }

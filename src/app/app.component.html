@@ -1,6 +1,21 @@
 <div class="home-page">
-  <side-navbar></side-navbar>
+  <side-navbar (selectedLink)="setActiveLink($event)"></side-navbar>
+
   <div class="main-layout-page">
-    <header></header>
+    <header [activeLink]="selectedLink"></header>
+
+    <div [ngSwitch]="selectedLink">
+      <ng-container *ngSwitchCase="navLinks.PROJECT_BOARD">
+        <project-board></project-board>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="navLinks.CREATE_ISSUES">
+        <create-issues></create-issues>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="navLinks.CREATE_PROJECT">
+        <create-project></create-project>
+      </ng-container>
+    </div>
   </div>
 </div>

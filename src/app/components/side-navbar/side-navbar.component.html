@@ -3,7 +3,7 @@
   <div class="nav-links">
     <ng-container *ngFor="let item of navLinks">
       <span
-        (click)="onClick(item.id)"
+        (click)="onClick(item)"
         [ngClass]="{ 'highlight-border': activeLinkId === item.id }"
         class="nav-link-item"
         >{{ item.link }}</span
