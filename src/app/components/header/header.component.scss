@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f7f8fa;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.search-box {
+  width: 77%;
+  padding: 1.75rem;
+  border-right: 1px solid #cfcfcf;
+  display: flex;
+}
+
+img {
+  margin-right: 0.75rem;
+}
+
+input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+
+  &::placeholder {
+    color: #1d262d;
+    font-weight: 300;
+  }
+}
+
+.user-profile {
+  width: 23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.875rem;
+}
+
+.user-name {
+  display: inline-block;
+  margin-right: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 15rem;
+  font-size: 0.85rem;
+  color: #1d262d;
+}
